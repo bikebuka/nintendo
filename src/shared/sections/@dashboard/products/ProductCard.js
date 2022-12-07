@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
-import { Box, Card, Link, Typography, Stack } from '@mui/material';
+import {Box, Card, Link, Typography, Stack, Divider, Button} from '@mui/material';
 import { styled } from '@mui/material/styles';
 // utils
 import { fCurrency } from '../../../utils/helper/formatNumber';
@@ -72,6 +72,8 @@ export default function ShopProductCard({ product }) {
             &nbsp;
             {fCurrency(price)}
           </Typography>
+          <Divider mt={3}/>
+          <Button variant="contained" color="primary" size="small">Buy Now</Button>
         </Stack>
       </Stack>
     </Card>
