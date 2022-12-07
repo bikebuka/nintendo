@@ -17,19 +17,18 @@ export const login = payload => async (dispatch) => {
             loading: true,
             submitting: true,
         });
-        const res = await call("post", AuthConstants.LOGIN,payload);
-        if (res.data.status) {
+        const res = await call("post", AuthConstants.LOGIN, {params: payload});
+        if (!res.data.error) {
             dispatch({
                 type: AUTH_API_SUCCESS,
                 payload: res.data,
                 loading: false,
                 message: res.data.message,
-                hasSentOTP: false,
             });
             //notify
             notifySuccess(res.data.message)
             //login
-            AuthService.login(res.data.access_token,res.data.profile)
+            AuthService.login(res.data.result.cache_hashes.translations,res.data.result)
             //notify
             notifySuccess(res.data.message)
             //redirect
@@ -40,7 +39,7 @@ export const login = payload => async (dispatch) => {
                 payload: res.data,
                 loading: false,
             });
-            notifyError(res.data.message)
+            notifyError(res.data.error.message)
         }
     } catch (err) {
         dispatch({

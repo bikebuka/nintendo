@@ -1,6 +1,5 @@
-// const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-const apiBaseUrl = 'https://sandbox.sasapay.me/apps/aziz/client/api/v1/';
-const appName = 'Aziz Remit';
+const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+const appName = process.env.REACT_APP_NAME;
 // const appName = process.env.REACT_APP_NAME;
 const appAlgorithmKey=process.env.REACT_APP_ALGORITHM_KEY;
 
