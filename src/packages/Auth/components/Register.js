@@ -3,12 +3,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import { Card, Link, Container, Typography } from '@mui/material';
 // hooks
-import useResponsive from '../hooks/useResponsive';
+import useResponsive from '../../../shared/hooks/useResponsive';
 // components
-import Page from '../components/Page';
-import Logo from '../components/Logo';
+import Page from '../../../shared/components/Page';
+import Logo from '../../../shared/components/Logo';
 // sections
-import { RegisterForm } from '../sections/auth/register';
+import { RegisterForm } from '../../../shared/sections/auth/register';
 
 // ----------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ export default function Register() {
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
               Already have an account? {''}
-              <Link variant="subtitle2" component={RouterLink} to="/login">
+              <Link variant="subtitle2" component={RouterLink} to="/auth/login">
                 Login
               </Link>
             </Typography>
@@ -78,7 +78,7 @@ export default function Register() {
         {mdUp && (
           <SectionStyle>
             <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-              Manage the job more effectively with Minimal
+              Manage your Trading more effectively
             </Typography>
             <img alt="register" src="/static/illustrations/illustration_register.png" />
           </SectionStyle>
@@ -95,12 +95,12 @@ export default function Register() {
             <RegisterForm />
 
             <Typography variant="body2" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
-              By registering, I agree to Minimal&nbsp;
-              <Link underline="always" color="text.primary" href="src/shared/pages/Register#">
+              By registering, I agree to NFT Trading&nbsp;
+              <Link underline="always" color="text.primary" href="src/packages/Auth/components/Register#">
                 Terms of Service
               </Link>
               {''}and{''}
-              <Link underline="always" color="text.primary" href="src/shared/pages/Register#">
+              <Link underline="always" color="text.primary" href="src/packages/Auth/components/Register#">
                 Privacy Policy
               </Link>
               .

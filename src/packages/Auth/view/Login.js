@@ -72,7 +72,7 @@ export default function Login() {
             <SectionStyle>
               <Typography color="primary" variant="h4" sx={{ px: "auto", mt: 10, mb: 5 }}>
                 <marquee className="p-2 font-weight-bolder">
-                  Aziz Remittance Merchant Gateway...
+                  NFT Trading...
                 </marquee>
               </Typography>
               <img src={require('../../../shared/assets/images/remit.gif')} width={"100%"} height={"60%"} alt="login"/>
@@ -83,14 +83,14 @@ export default function Login() {
           <ContentStyle>
             <SectionStyle justifyItems="center">
               <Box sx={{m:'auto'}}>
-                <img src={require("../../../shared/assets/aziz-final-trans.png")} alt="logo" width={150} height={150}/>
+                <img src={require("../../../shared/assets/logo/logo.png")} alt="logo" width={150} height={150}/>
               </Box>
               <Stack spacing={2}>
                 <LoginForm />
-                {!smUp && (
-                    <Typography variant="body2" align="center" sx={{ mt: 3 }}>
+                {smUp && (
+                    <Typography variant="body2" align="center" sx={{ m: 3 }}>
                       Don’t have an account?{' '}
-                      <Link variant="subtitle2" component={RouterLink} to="/register">
+                      <Link variant="subtitle2" component={RouterLink} to="/auth/register">
                         Get started
                       </Link>
                     </Typography>
