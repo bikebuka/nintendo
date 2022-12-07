@@ -14,15 +14,15 @@ const navConfig = [];
 //dashboard links
 navConfig.push(...DashboardLinks)
 //top up
-navConfig.push(...TopUpLinks)
+// navConfig.push(...TopUpLinks)
 //send money
-navConfig.push(...SendMoneyLinks)
+// navConfig.push(...SendMoneyLinks)
 //transfer money
 // navConfig.push(...TransferMoneyLinks)
 //withdraw money
 // navConfig.push(...WithdrawMoneyLinks)
 //pay bills
-navConfig.push(...PayBillLinks)
+// navConfig.push(...PayBillLinks)
 //account statements
-navConfig.push(...StatementLinks)
+// navConfig.push(...StatementLinks)
 export default navConfig;
