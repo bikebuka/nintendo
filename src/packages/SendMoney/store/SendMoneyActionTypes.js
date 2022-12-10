@@ -1,4 +1,0 @@
-export const API_REQUEST="SEND_MONEY/API_REQUEST"
-export const API_SUCCESS="SEND_MONEY/API_SUCCESS"
-export const API_ERROR  ="SEND_MONEY/API_ERROR"
-//api

@@ -1,4 +1,0 @@
-export const API_REQUEST="PAYBILL/API_REQUEST"
-export const API_SUCCESS="PAYBILL/API_SUCCESS"
-export const API_ERROR  ="PAYBILL/API_ERROR"
-//api

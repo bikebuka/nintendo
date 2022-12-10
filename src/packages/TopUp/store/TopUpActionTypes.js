@@ -1,4 +1,0 @@
-export const API_REQUEST="TOP_UP/API_REQUEST"
-export const API_SUCCESS="TOP_UP/API_SUCCESS"
-export const API_ERROR  ="TOP_UP/API_ERROR"
-//api

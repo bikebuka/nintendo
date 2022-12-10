@@ -6,7 +6,7 @@ import {Navigate} from "react-router-dom";
 import Page404 from "../../../shared/pages/Page404";
 import {ProtectedRoute} from "../../../shared/components/protected";
 
-export const DashboardRoutes =[
+export const ProductRoutes =[
     {
         path: '/dashboard',
         element: <ProtectedRoute><DashboardLayout /></ProtectedRoute>,

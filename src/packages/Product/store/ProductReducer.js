@@ -1,14 +1,17 @@
-import {API_ERROR, API_REQUEST, API_SUCCESS} from "./StatementActionTypes";
+import {API_ERROR, API_REQUEST, API_SUCCESS} from "./ProductActionTypes";
 
 const initialState = {
     loading: false,
     error: {},
-    statements: [],
-    pagination:{}
+    status: false,
+    sidebarShow: 'responsive',
+    profile: {},
 };
-export default function statementReducer(state=initialState, action) {
-    const { type, payload, loading, error} = action;
+export default function ProductReducer(state=initialState, action) {
+    const { type, payload, loading, error,rest} = action;
     switch (type) {
+        case 'set':
+            return { ...state, ...rest }
         case API_REQUEST:
             return {
                 loading
@@ -17,8 +20,7 @@ export default function statementReducer(state=initialState, action) {
             return {
                 ...state,
                 loading,
-                statements:payload.data,
-                pagination:payload
+                profile:payload.profile
             }
         case API_ERROR:
             return {
