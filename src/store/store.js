@@ -9,15 +9,15 @@ const persistConfig = {
   storage,
 }
 
-const persistedReducer = persistReducer(persistConfig, RootReducer)
+// const persistedReducer = persistReducer(persistConfig, RootReducer)
 
 
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: RootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',
 })
 
 export default store
 
-export const persistor = persistStore(store)
+// export const persistor = persistStore(store)

@@ -35,7 +35,6 @@ export default function LoginForm() {
   const defaultValues = {
     login: '',
     password: '',
-    remember: true,
     db:"admin-nftstrading-co",
     platform:"web",
     navigate

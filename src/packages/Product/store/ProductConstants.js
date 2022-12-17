@@ -1,3 +1,3 @@
 export default {
-    PRODUCTS:`product.product`
+    PRODUCTS:`api/product.product/`
 }

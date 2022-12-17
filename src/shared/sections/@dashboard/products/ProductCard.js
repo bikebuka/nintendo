@@ -26,7 +26,8 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
-  const { name, cover, price, colors, status, priceSale } = product;
+  const { name, cover,image_1024, price, colors=[], status, lst_price } = product;
+  console.log(product)
 
   return (
     <Card>
@@ -34,7 +35,7 @@ export default function ShopProductCard({ product }) {
         {status && (
           <Label
             variant="filled"
-            color={(status === 'sale' && 'error') || 'info'}
+            color={'info'}
             sx={{
               zIndex: 9,
               top: 16,
@@ -46,7 +47,7 @@ export default function ShopProductCard({ product }) {
             {status}
           </Label>
         )}
-        <ProductImgStyle alt={name} src={cover} />
+        <ProductImgStyle alt={name} src={`data:image/jpeg;base64,${image_1024}`} />
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
@@ -66,11 +67,10 @@ export default function ShopProductCard({ product }) {
                 color: 'text.disabled',
                 textDecoration: 'line-through',
               }}
-            >
-              {priceSale && fCurrency(priceSale)}
+            >{lst_price && fCurrency(lst_price*2)}
             </Typography>
             &nbsp;
-            {fCurrency(price)}
+           KES {fCurrency(lst_price)}
           </Typography>
           <Divider mt={3}/>
           <Button variant="contained" color="primary" size="small">Buy Now</Button>

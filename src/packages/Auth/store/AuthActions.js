@@ -3,6 +3,7 @@ import AuthConstants from "./AuthConstants";
 import {AUTH_API_FAILED, AUTH_API_REQUEST, AUTH_API_SUCCESS} from "./AuthActionTypes";
 import AuthService from "../../../core/access-control/AuthService";
 import {toast} from "react-toastify";
+import {postData} from "../../../core/services/http/fetch/fetch";
 const notifySuccess = msg => {
     toast.success(msg)
 }
@@ -17,20 +18,19 @@ export const login = payload => async (dispatch) => {
             loading: true,
             submitting: true,
         });
-        const res = await call("post", AuthConstants.LOGIN, {params: payload});
-        if (!res.data.error) {
+        const res = await postData(AuthConstants.LOGIN, {params: payload});
+        //
+
+        if (res?.result?.is_system) {
             dispatch({
                 type: AUTH_API_SUCCESS,
                 payload: res.data,
                 loading: false,
-                message: res.data.message,
             });
             //notify
-            notifySuccess(res.data.message)
+            notifySuccess('Login successful')
             //login
-            AuthService.login(res.data.result.cache_hashes.translations,res.data.result)
-            //notify
-            notifySuccess(res.data.message)
+            AuthService.login(res.result.cache_hashes.translations,res.result)
             //redirect
             payload.navigate('/')
         } else {
@@ -44,7 +44,7 @@ export const login = payload => async (dispatch) => {
     } catch (err) {
         dispatch({
             type: AUTH_API_FAILED,
-            error: err.response.data,
+            error: err?.response.data,
             loading: false
         });
         notifyError(err.response.data.message)
@@ -112,7 +112,6 @@ export const resetPassword = payload => async (dispatch) => {
                 loading: false,
                 hasSentOTP: true
             });
-            //notify
             notifySuccess(res.data.message)
         } else {
             dispatch({

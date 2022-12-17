@@ -3,8 +3,8 @@ import {
     API_REQUEST,
     API_SUCCESS
 } from "./ProductActionTypes";
-import call from "../../../core/services/http";
 import ProductConstants from "./ProductConstants";
+import {getData} from "../../../core/services/http/fetch/fetch";
 //
 export const getProducts =  () => async (dispatch) => {
     try {
@@ -12,8 +12,9 @@ export const getProducts =  () => async (dispatch) => {
             type: API_REQUEST,
             loading: true
         });
-        let res=await call('get',ProductConstants.PRODUCTS)
-        if (res.data.status) {
+        let res=await getData(ProductConstants.PRODUCTS)
+        console.log(res);
+        if (res.status) {
             dispatch({
                 type: API_SUCCESS,
                 payload: res.data,
