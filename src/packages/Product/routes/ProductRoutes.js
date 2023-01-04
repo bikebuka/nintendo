@@ -9,7 +9,7 @@ import {ProtectedRoute} from "../../../shared/components/protected";
 export const ProductRoutes =[
     {
         path: '/dashboard',
-        element: <ProtectedRoute><DashboardLayout /></ProtectedRoute>,
+        element: <DashboardLayout /> ,
         children: [
             { path: 'app', element: <DashboardApp /> },
         ],
