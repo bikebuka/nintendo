@@ -44,7 +44,7 @@ export const login = payload => async (dispatch) => {
     } catch (err) {
         dispatch({
             type: AUTH_API_FAILED,
-            error: err?.response.data,
+         //   error: err?.response.data,
             loading: false
         });
         notifyError(err.response.data.message)

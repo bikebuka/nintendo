@@ -75,10 +75,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             <Avatar src={account.photoURL} alt="photoURL" />
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'white' }}>
-                {user.display_name || 'John Doe'}
+                {/* {user.display_name || 'John Doe'} */}
               </Typography>
               <Typography variant="body2" sx={{ color: 'white' }}>
-                {ucFirst(user.account_type||'Merchant')}
+                {/* {ucFirst(user.account_type||'Merchant')} */}
               </Typography>
             </Box>
           </AccountStyle>
